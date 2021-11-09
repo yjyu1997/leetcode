@@ -9,7 +9,7 @@ import org.junit.Test;
  * @version 1.0.0
  * @since <pre>Nov.03,2021</pre>
  */
-public class Solution {
+public class Solution1 {
 
     /**
      * Input: nums1 = [1,3], nums2 = [2]
