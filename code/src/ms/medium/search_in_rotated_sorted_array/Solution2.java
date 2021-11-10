@@ -5,7 +5,9 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
- * Solution2
+ * Solution2<br/>
+ * 先找pivot 再左右分治
+ *
  *
  * @author <span style="color:#FFB43B;"><b>Heyu Yao</b></span>
  * @version 1.0.0
