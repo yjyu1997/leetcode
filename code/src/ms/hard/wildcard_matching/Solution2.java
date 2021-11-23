@@ -36,20 +36,20 @@ public class Solution2 {
             return false;
         }
 
-        Boolean[][] dp = getDpMatrix(s, p);
+        boolean[][] dp = getDpMatrix(s, p);
 
         return dp[pLength][sLength];
     }
 
 
-    private Boolean[][] getDpMatrix(String s, String p){
+    private boolean[][] getDpMatrix(String s, String p){
 
         int sLength = s.length();
         int pLength = p.length();
 
 
 
-        Boolean[][] dp = new Boolean[pLength + 1][sLength + 1];
+        boolean[][] dp = new boolean[pLength + 1][sLength + 1];
 
         //first, leave the matrix [0][0] with true
         dp[0][0] = true;
@@ -108,7 +108,7 @@ public class Solution2 {
         return builder.toString();
     }
 
-    public <T> void printMatrix(T[][] matrix) {
+    public void printMatrix(boolean[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + " ");
@@ -123,6 +123,6 @@ public class Solution2 {
          System.out.println(isMatch("bbbaaabbababbaabbabbbbba",
                 "*ab*****b"));
         System.out.println(isMatch("de", "??"));
-        //this.<Boolean>printMatrix(getDpMatrix("bbbaaabbababbaabbabbbbba", "*ab*****b"));
+        this.printMatrix(getDpMatrix("bbbaaabbababbaabbabbbbba", "*ab*****b"));
     }
 }
