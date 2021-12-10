@@ -13,7 +13,6 @@ public class Solution2 {
 
 
     /**
-     *
      * @param n 几位数排列
      * @param k 排第k位的排列
      * @return 排列
@@ -36,7 +35,7 @@ public class Solution2 {
 
         int[] c = new int[m];
 
-        for(int i=0; i<m; ++i) {
+        for (int i = 0; i < m; ++i) {
             c[i] = 0;
         }
 
@@ -44,10 +43,22 @@ public class Solution2 {
         return null;
     }
 
-    private void add(int[] c , int u , int x){
 
-        while(u < c.length){
+    /**
+     * 单点更新
+     *
+     * @param c 树状数组
+     * @param u 更新的位置
+     * @param x 更新后的数
+     */
+    private void add(int[] c, int u, int x) {
+
+        while (u < c.length) {
+
+            //每个都加上x
             c[u] += x;
+
+            //更新下一个节点
             u += lowBit(u);
         }
 
@@ -55,18 +66,42 @@ public class Solution2 {
 
 
     /**
+     * 区间求和
+     * @param u
+     */
+    private int rnk(int[]c, int u) {
+
+        int ret = 0;
+        while (u > 0) {
+            ret += c[u];
+            u -= lowBit(u);
+        }
+        return ret;
+    }
+
+
+    private int kth(int[]c, int k){
+        int ret = 0;
+
+        for (int i = c.length >> 1; i > 0 ; i >>= 1) {
+
+
+        }
+
+        return 0;
+    }
+
+    /**
      * Find the lowest 1
      */
-    private int lowBit(int x){
+    private int lowBit(int x) {
         return x & -x;
     }
 
 
-
-
     @Test
-    public void test1(){
-        System.out.println(3&-3);
+    public void test1() {
+        System.out.println(10 >> 1);
     }
 
 
