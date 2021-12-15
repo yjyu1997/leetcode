@@ -40,7 +40,22 @@ public class Solution2 {
         }
 
 
-        return null;
+        StringBuffer ans = new StringBuffer();
+
+        k--;
+
+        for (int i = 1; i <= n ; i++) {
+            add(c,i,1);
+        }
+
+        for (int i = n-1; i >= 0 ; i--) {
+            int kth = kth(c, k/factorial[i] + 1);
+            ans.append(kth);
+            add(c,kth, -1);
+            k %= factorial[i];
+        }
+
+        return ans.toString();
     }
 
 
@@ -85,10 +100,13 @@ public class Solution2 {
 
         for (int i = c.length >> 1; i > 0 ; i >>= 1) {
 
-
+            if(c[ret + i] < k) {
+                ret += i;
+                k -= c[ret];
+            }
         }
 
-        return 0;
+        return ret + 1;
     }
 
     /**
@@ -101,7 +119,10 @@ public class Solution2 {
 
     @Test
     public void test1() {
-        System.out.println(10 >> 1);
+        for (int i = 0; i < 10000; i++) {
+            System.out.println(getPermutation(15,7));
+        }
+
     }
 
 

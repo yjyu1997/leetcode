@@ -59,5 +59,12 @@ public class Solution1 {
         return ans.toString();
     }
 
+    @Test
+    public void test1() {
+        for (int i = 0; i < 10000; i++) {
+            System.out.println(getPermutation(15,7));
+        }
+
+    }
 
 }

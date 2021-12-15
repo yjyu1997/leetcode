@@ -1,8 +1,8 @@
 package ms.hard.reverse_nodes_k;
 
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
     ListNode() {
     }
@@ -15,7 +15,7 @@ public class ListNode {
                 '}';
     }
 
-    ListNode(int val) {
+    public ListNode(int val) {
         this.val = val;
     }
 
